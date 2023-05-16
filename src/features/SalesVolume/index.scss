@@ -1,0 +1,19 @@
+.p-salesVolume {
+    $root: &;
+    padding: rem(24) rem(20);
+    background-color: $white;
+
+    &_viewBy {
+        margin-bottom: rem(24);
+    }
+}
+
+.t-groupedChart {
+    border: 1px solid $gainsboro2;
+    border-radius: 4px;
+    padding: rem(24);
+
+    @include desktop-down {
+        padding: rem(16);
+    }
+}

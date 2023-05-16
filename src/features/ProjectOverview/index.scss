@@ -1,0 +1,33 @@
+.p-projectOverview {
+    $root: &;
+    padding: rem(24) rem(20);
+    background-color: $white;
+}
+
+.t-tableChart {
+    &:not(:first-child) {
+        margin-top: rem(43);
+        @include tablet-down {
+            margin-top: rem(36);
+        }
+    }
+
+    .sideBg {
+        .ant-table-tbody {
+            tr {
+                td:first-child {
+                    background-color: $anti-flash-white2;
+                }
+            }
+        }
+
+        .ant-table-row {
+            &:last-child {
+                .ant-table-cell {
+                    background-color: $pistachio;
+                    color: $white;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+$image-ratio: (
+    'logo': (w: 298, h: 176),
+    '1x1': (w: 1, h: 1),
+);
+
+.a-image {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 100%;
+    position: relative;
+    transition: $transition-long ease;
+    width: 100%;
+
+    img {
+        height: 100%;
+        left: 0;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    @each $size, $val in $image-ratio {
+        &-#{$size} {
+            @include aspect-ratio(map-get($val, 'w'), map-get($val, 'h'));
+        }
+    }
+}

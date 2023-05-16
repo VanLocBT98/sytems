@@ -1,0 +1,194 @@
+@use 'sass:math';
+
+@mixin text-overflow ($number: 2) {
+    display: box;
+    -webkit-line-clamp: ($number);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin aspect-ratio($width: 1, $height: 1) {
+    padding-bottom: math.div($height, $width) * 100%;
+}
+
+@mixin transition($value) {
+    transition: $value;
+}
+
+@mixin scrollbars($size: 12,
+$thumb-color: $dim-gray,
+$track-color: $anti-flash-white,
+$border-radius-thumb: 5,
+$border-thumb: 2) {
+    &::-webkit-scrollbar {
+        width: rem($size);
+        height: rem($size);
+        margin-right: rem(10);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $thumb-color;
+        border-radius: rem($border-radius-thumb);
+        border: rem($border-thumb) solid $track-color;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $track-color;
+    }
+}
+
+@mixin font-base($font-size: 16, $line-height: 24) {
+    font-size: rem($font-size);
+    line-height: rem($line-height);
+}
+
+@mixin style-bg-color() {
+    &-bg-white {
+        background-color: $white;
+    }
+}
+
+@mixin style-font-weight() {
+    &-100 {
+        font-weight: 100;
+    }
+
+    &-200 {
+        font-weight: 200;
+    }
+
+    &-300 {
+        font-weight: 300;
+    }
+
+    &-400 {
+        font-weight: normal;
+    }
+
+    &-500 {
+        font-weight: 500;
+    }
+
+    &-600 {
+        font-weight: 600;
+    }
+
+    &-700 {
+        font-weight: bold;
+    }
+
+    &-800 {
+        font-weight: 800;
+    }
+
+    &-900 {
+        font-weight: 900;
+    }
+}
+
+@mixin style-general() {
+    &-uppercase {
+        text-transform: uppercase;
+    }
+
+    &-capitalize {
+        text-transform: capitalize;
+    }
+
+    &-underline {
+        text-decoration: underline;
+    }
+
+    &-italic {
+        font-style: italic;
+    }
+
+    &-center {
+        text-align: center;
+    }
+
+    &-justify {
+        text-align: justify;
+    }
+}
+
+@mixin reset-button {
+    appearance: none;
+    background-color: none;
+    border: 0;
+    outline: none;
+}
+
+@mixin list-style-none {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin adjust-flex($justify-content: center, $align-item: center) {
+    align-items: $align-item;
+    display: flex;
+    justify-content: $justify-content;
+}
+
+$colors-design: (
+    'white': $white,
+    'black': $black,
+);
+
+@mixin style-color {
+
+    @each $name,
+        $color in $colors-design {
+        &-#{$name} {
+            color: $color;
+        }
+    }
+}
+
+@mixin un-authorized-layout($maxWidth: 400) {
+    @include adjust-flex(center, center);
+    height: 100%;
+    padding-left: $gutter-standard;
+    padding-right: $gutter-standard;
+    margin-top: rem(26);
+
+    @include mobile-up {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: rem($maxWidth);
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 0;
+    }
+
+    &_context {
+        width: 100%;
+    }
+
+    &_form {
+        margin-top: rem(32);
+
+        &_errors {
+            padding: rem(8) $gutter-standard;
+            background-color: $sea-shell;
+            border: 1px solid $light-salmon-pink;
+            border-radius: rem(4);
+        }
+    }
+}
+
+
+@mixin spacing-generation($prefix, $property, $arraySpacing) {
+    $sizes: $arraySpacing;
+    $spacing: 1rem;
+    $base-size: 16;
+  
+    @for $i from 1 through length($sizes) {
+        $size: nth($sizes, $i);
+        .#{$prefix}-#{$size} {
+            #{$property}: $size/$base-size * $spacing;
+        }
+    }
+}
+

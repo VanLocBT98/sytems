@@ -1,0 +1,234 @@
+.o-chart {
+    $root: &;
+
+    &_title {
+        font-weight: bold;
+        text-transform: uppercase;
+        @include font-base(16,28);
+    }
+
+    &_panel {
+        min-width: rem(450);
+        @include small-mobile {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &.empty {
+            min-width: auto;
+        }
+    }
+
+    &_legendCustom {
+        display: flex;
+
+        &_items {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        &_item {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        &_container {
+            display: flex;
+            padding: 0;
+            align-items: center;
+            width: 100%;
+            margin: rem(20) 0 0;
+        }
+
+        
+    }
+
+    &-doughnut {
+        @include adjust-flex(flex-start, center);
+        #{$root}_panel {
+            min-width: rem(275);
+        }
+        #{$root}_legendCustom {
+            justify-content: space-between;
+            width: 100%;
+            padding-left: rem(26);
+        }
+        #{$root}_legendCustom_container {
+            display: block;
+            @include mobile-down {
+                margin-bottom: rem(24);
+            }
+        }
+        #{$root}_legendCustom_items {
+            align-items: flex-start;
+            margin-bottom: rem(20);
+            @include mobile-down {
+                margin-bottom: rem(12);
+            }
+
+            div {
+                width: 100%;
+                @include adjust-flex(space-between, center);
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            span {
+                color: $storm-clound;
+                @include font-base(14, 20);
+            }
+
+            p {
+                color: $smoky-black;
+                font-weight: 600;
+                margin-left: rem(8);
+                @include font-base(16, 22);
+            }
+        }
+        #{$root}_legendCustom_box {
+            display: inline-block;
+            margin-right: rem(10);
+            height: rem(16);
+            width: rem(16);
+            border-radius: 50%;
+        }
+    }
+
+    &-bar {
+        #{$root}_legendCustom_box {
+            display: inline-block;
+            width: rem(30);
+            height: rem(16);
+            border-radius: 2px;
+            margin-right: 4px;
+        }
+        #{$root}_legendCustom_item {
+            margin-right: 12px;
+
+            p {
+                @include font-base(11, 18);
+                font-weight: 700;
+            }
+        }
+        #{$root}_legendCustom_container {
+            justify-content: center;
+        }
+    }
+
+    &-line {
+        #{$root}_legendCustom_container {
+            margin: 0 0 rem(32);
+        }
+        #{$root}_legendCustom_item {
+            align-items: flex-start;
+
+            &:not(:first-child) {
+                margin-left: rem(62);
+
+                @include break-max(1300px) {
+                    margin-left: rem(30);
+                }
+            }
+
+            span {
+                color: $smoky-black;
+                @include font-base(14, 20);
+            }
+
+            p {
+                color: $smoky-black;
+                font-weight: 600;
+                margin-left: rem(8);
+                @include font-base(18, 22);
+
+                @include break-min(1360px) {
+                    margin-left: 0;
+                    @include font-base(32, 48);
+                }
+            }
+
+        }
+        
+        #{$root}_legendCustom_box {
+            display: inline-block;
+            margin-right: rem(10);
+            height: rem(12);
+            width: rem(12);
+            border-radius: 50%;
+            margin-top: rem(5);
+        }
+
+        /* stylelint-disable-next-line selector-max-id */
+        #line-lengend-container-secondary {
+            #{$root}_legendCustom_container {
+                flex-wrap: wrap;
+            }
+            #{$root}_legendCustom_items {
+                flex: 0 0 33.33333%;
+                max-width: 33.33333%;
+            }
+        }
+    }
+
+    &-pie {
+        #{$root}_legendCustom {
+            justify-content: space-between;
+        }
+        #{$root}_legendCustom_container {
+            justify-content: space-around;
+        }
+        #{$root}_legendCustom_item {
+            p {
+                color: $gunmental;
+                font-weight: 500;
+                margin-bottom: 0;
+                @include font-base(14, 20);
+            }
+        }
+        #{$root}_panel {
+            min-width: auto;
+        }
+        #{$root}_legendCustom_box {
+            display: inline-block;
+            margin-right: rem(10);
+            height: rem(16);
+            width: rem(16);
+            border-radius: 50%;
+        }
+    }
+
+    &-giftAll {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+
+        #{$root}_panel {
+            width: rem(240);
+        }
+
+        #{$root}_legendCustom {
+            display: block;
+
+            &_title {
+                font-weight: 600;
+                color: $smoky-black;
+                @include font-base(16, 24);
+            }
+
+            &_container {
+                display: block;
+            }
+
+            &_item {
+                &:not(:first-child) {
+                    margin-top: rem(12);
+                }
+            }
+        }
+    }
+}

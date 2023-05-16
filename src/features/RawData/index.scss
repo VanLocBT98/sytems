@@ -1,0 +1,54 @@
+.p-rawData {
+    $root: &;
+    padding: rem(18) rem(20);
+    background-color: $white;
+    
+
+    .ant-table-thead > tr > th {
+        @include font-base(12, 14);
+    }
+
+   
+}
+
+.OCFinder {
+    &_menu {
+        @include scrollbars(); 
+        border-right: rem(1)  $anti-flash-white2 inset !important;
+
+        .ant-menu-submenu:not(:last-child) {
+            border-bottom: rem(1)  $anti-flash-white2 inset !important; 
+        }
+
+        .ant-menu {
+            padding-bottom: rem(22) !important;
+        }
+
+        .ant-menu-submenu-title[aria-expanded=true] span {
+            color: $la-salle-green !important;
+        }
+    
+        .ant-menu-item {
+            &::after {
+                border: 0 !important;
+            } 
+    
+            .ant-menu-title-content {
+                color: $gunmental !important;
+            }
+    
+            &-selected {
+                border-radius: 0% !important;
+        
+                .ant-menu-title-content {
+                    color: $smoky-black !important;
+                }
+            }
+        }
+    }
+
+    &_contain { 
+        padding-left: rem(24); 
+    }
+}
+

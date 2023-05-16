@@ -1,0 +1,107 @@
+.sideBar {
+    $root: &;
+
+    &_wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    &_menus {
+        flex-grow: 1;
+        overflow-y: auto;
+        overflow-x: hidden;
+        @include scrollbars(8, $gainsboro, transparent);
+    }
+
+    &_action {
+        flex-shrink: 0;
+        margin-top: rem(16);
+        width: 100%;
+        padding-left: rem(16);
+        padding-right: rem(16);
+        font-size: rem(16);
+        font-weight: 500;
+        color: $white;
+
+        &-collapsed {
+            padding-left: rem(5);
+            padding-right: rem(5);
+
+            #{$root}_theme,
+            #{$root}_profile,
+            #{$root}__language {
+                justify-content: center;
+            }
+        }
+
+        .ant-divider-horizontal {
+            margin-top: rem(16);
+            margin-bottom: rem(16);
+        }
+    }
+
+    &_language {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all $transition ease-in-out;
+    }
+
+    &_languagePulldown {
+        width: rem(150);
+
+        &_option {
+            vertical-align: middle;
+            align-items: center;
+            display: inline-flex;
+            font-size: rem(14);
+
+            .a-icon {
+                display: inline-block;
+            }
+
+            >span {
+                display: inline-flex;
+                margin-right: rem(6);
+            }
+        }
+    }
+
+    &_theme {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: rem(16);
+        transition: all $transition ease-in-out;
+    }
+
+    &_profile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        transition: all $transition ease-in-out;
+        height: 100%;
+        padding: rem(16) rem(18);
+
+        button {
+            padding-right: 0;
+        }
+    }
+
+    &_buttonCollapse {
+        background: $anti-flash-white2;
+        border-radius: 4px;
+        width: rem(28);
+        height: rem(28);
+        cursor: pointer;
+        @include adjust-flex(center, center);
+
+        &.open {
+            position: absolute;
+            top: rem(12);
+            right: rem(16);
+        }
+    }
+}

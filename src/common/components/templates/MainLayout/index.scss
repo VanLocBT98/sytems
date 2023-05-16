@@ -1,0 +1,101 @@
+.t-mainlayout {
+    &_sidebar {
+        &_wrapper {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        &_header {
+            padding: rem(12) rem(16) rem(20);
+
+            &-open {
+                padding-bottom: rem(5);
+            }
+            
+            @include adjust-flex(center, center);
+
+            .ant-image {
+                flex-shrink: 0;
+            }
+        }
+
+        &_branch {
+            color: $cool-black;
+            font-size: rem(16) !important;
+            margin-bottom: 0 !important;
+            margin-left: rem(8);
+            opacity: 1;
+            transition: $transition;
+
+            &-hidden {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        &_menu {
+            flex-direction: column;
+            flex-grow: 1;
+            padding-bottom: rem(12);
+            padding-top: rem(18);
+            
+            @include adjust-flex(space-between, stretch);
+        }
+    }
+
+    &_hamburger {
+        &:hover,
+        &:focus {
+            border-color: $cool-black;
+            color: $cool-black;
+        }
+    }
+
+    &_header {
+        position: fixed;
+        top: 0;
+        left: rem(243);
+        width: calc(100% - 243px);
+        z-index: $height-header-desktop-scroll;
+        transition: 0.2s ease;
+        
+        &.expand {
+            left: rem(80);
+            width: calc(100% - 80px);
+        }
+    }
+
+    &_content {
+        padding: 0 0 rem(48);
+        height: 100vh;
+        max-height: 100vh;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        @include scrollbars();
+    }
+
+    &_wrapper {
+        position: relative;
+        flex-grow: 1;
+        margin-left: rem($main-wrapper-layout);
+        margin-right: rem($main-wrapper-layout);
+        margin-top: rem(88);
+
+        @include max-desktop-down {
+            margin-left: rem($main-wrapper-layout-medium);
+            margin-right: rem($main-wrapper-layout-medium);
+        }
+
+        @include desktop-down {
+            margin-left: rem($main-wrapper-layout-small);
+            margin-right: rem($main-wrapper-layout-small);
+        }
+
+        .ant-spin-nested-loading,
+        .ant-spin-container {
+            height: 100%;
+        }
+    }
+}

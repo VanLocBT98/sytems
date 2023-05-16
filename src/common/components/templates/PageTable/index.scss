@@ -1,0 +1,15 @@
+.t-pageTable {
+    &_filter {
+        transition: height ease $transition;
+        overflow: hidden;
+        @include adjust-flex(flex-end); 
+    }
+
+    
+}
+
+.ant-table-container {
+    .ant-table-body {
+        @include scrollbars(10, $gainsboro, transparent);
+    }
+}

@@ -1,0 +1,16 @@
+.t-contentOverview {
+    &_item {
+        border: 1px solid $gainsboro2;
+        border-radius: 4px;
+        padding: rem(16);
+        height: 100%;
+    }
+
+    &_content {
+        margin-top: rem(16);
+    }
+
+    .o-chart_panel {
+        min-width: auto;
+    }
+}

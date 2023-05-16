@@ -1,0 +1,58 @@
+$size-icon: (
+    '12x12': (w: 12, h: 12),
+    '14x14': (w: 14, h: 14),
+    '16x16': (w: 16, h: 16),
+    '18x18': (w: 18, h: 18),
+    '20x20': (w: 20, h: 20),
+    '24x24': (w: 24, h: 24),
+    '26x26': (w: 26, h: 26),
+    '26x15': (w: 26, h: 15),
+    '28x28': (w: 28, h: 28),
+    '32x32': (w: 32, h: 32),
+);
+
+$icon-src: (
+    'delete': '#{$icon-path}ic_delete.svg',
+    'alert': '#{$icon-path}ic_alert.svg',
+    'caret': '#{$icon-path}ic_caret.svg',
+    'caretGreen': '#{$icon-path}ic_caret_green.svg',
+    'caretRed': '#{$icon-path}ic_caret_red.svg',
+    'personCircle': '#{$icon-path}ic_person_circle.svg',
+    'lock': '#{$icon-path}ic_lock.svg',
+    'signOut': '#{$icon-path}ic_signOut_green.svg',
+    'edit': '#{$icon-path}ic_edit.svg',
+    'editBlack': '#{$icon-path}ic_edit_black.svg',
+    'lockWhite': '#{$icon-path}ic_lock_white.svg',
+    'dismiss': '#{$icon-path}ic_dismiss.svg',
+    'checkmark': '#{$icon-path}ic_checkmark.svg',
+    'add': '#{$icon-path}ic_add.svg',
+    'filter': '#{$icon-path}ic_filter.svg',
+    'more': '#{$icon-path}ic_more.svg',
+    'eye': '#{$icon-path}ic_eye.svg',
+    'trash': '#{$icon-path}ic_trash.svg',
+    'editYellow': '#{$icon-path}ic_edit_yellow.svg',
+    'image': '#{$icon-path}ic_image.svg',
+);
+
+.a-icon {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    margin: auto;
+
+    @each $size,
+        $val in $size-icon {
+        &-#{$size} {
+            height: map-get($val, 'h')+ px;
+            width: map-get($val, 'w') + px;
+        }
+    }
+
+    @each $icon,
+        $val in $icon-src {
+        &-#{$icon} {
+            background-image: url($val);
+        }
+    }
+}

@@ -1,0 +1,28 @@
+.p-home {
+    padding: rem(40) rem(20);
+    background-color: $white;
+
+    @include mobile-down {
+        padding: rem(32) rem(16);
+    }
+
+    &_filter {
+        @include adjust-flex(space-between, center);
+
+        &_select {
+            @include adjust-flex(flex-start, center);
+
+            &-wrapper {
+                margin-left: rem(20);
+
+                @include mobile-down {
+                    margin-left: rem(12);
+                }
+            }
+        }
+    }
+
+    &_spin {
+        height: 100%;
+    }
+}

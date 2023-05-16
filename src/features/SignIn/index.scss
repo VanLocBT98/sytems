@@ -1,0 +1,7 @@
+.p-signIn {
+    @include un-authorized-layout();
+
+    &_forget {
+        display: flex;
+    }
+}

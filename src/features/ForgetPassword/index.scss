@@ -1,0 +1,26 @@
+.p-forgetPassword {
+    @include un-authorized-layout();
+
+    &.success {
+        max-width: rem(500);
+
+        @include mobile-down {
+            max-width: rem(332);
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &_success {
+        text-align: center;
+
+        &_image {
+            max-width: rem(120);
+            margin: 0 auto rem(32);
+        }
+    }
+
+    .ant-spin-nested-loading {
+        width: 100%;
+    }
+}

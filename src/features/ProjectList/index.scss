@@ -1,0 +1,45 @@
+.p-projectList {
+    $root: &;
+    padding: rem(24) rem(20);
+    background-color: $white;
+
+    &_createProject {
+        overflow: auto;
+    }
+
+    &_modal {
+        top: 0 !important;
+        padding-bottom: 0;
+        height: 100%;
+        @include adjust-flex(center, center);
+        flex-direction: column;
+
+        .ant-modal-header {
+            height: rem(54);
+        }
+
+        .ant-modal-content {
+            max-height: 83.33333333333vh;
+            overflow: hidden;
+        }
+    }
+}
+
+.ant-select-selection-item {
+    .p-projectList_status.finished & {
+        color: $mountain-meadow;
+    }
+
+    .p-projectList_status.running & {
+        color: $blue-crayola;
+    }
+
+    .p-projectList_status.cancelled & {
+        color: $red-orange;
+    }
+}
+
+.ant-pagination-total-text {
+    margin-right: rem(24);
+    color: $gunmental;
+}

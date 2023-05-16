@@ -1,0 +1,10 @@
+.m-errorBox {
+    padding: rem(8) rem(16);
+    background-color: $sea-shell;
+    border: 1px solid $light-salmon-pink;
+    border-radius: rem(4);
+
+    &_iconWrapper {
+        padding-top: rem(3);
+    }
+}

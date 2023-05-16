@@ -1,0 +1,9 @@
+.p-outlet {
+    $root: &;
+    padding: rem(24) rem(20);
+    background-color: $white;
+
+    &_filter {
+        margin-bottom: rem(24);
+    }
+}

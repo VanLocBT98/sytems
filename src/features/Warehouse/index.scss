@@ -1,0 +1,10 @@
+.p-warehouse {
+    $root: &;
+    padding: rem(24) rem(20);
+    background-color: $white;
+
+    &_pictureCell {
+        max-width: rem(40);
+        max-height: rem(40);
+    }
+}

@@ -1,0 +1,277 @@
+/* stylelint-disable selector-no-qualifying-type */
+
+.ant {
+    $root: &;
+
+    &-menu {
+        background: none !important;
+        border-right: 0 !important;
+
+        &-title-content {
+            font-size: rem(16);
+            font-weight: 500;
+        }
+
+        &-submenu-popup {
+            background-color: $white !important;
+        }
+
+        &-sub {
+            background: none !important;
+        }
+
+        &-title {
+            &-content {
+                font-size: rem(14) !important;
+                line-height: rem(20) !important;
+                color: $gunmental !important;
+            }
+        }
+
+        &-item {
+            &::after {
+                border-right: 5px solid $la-salle-green !important;
+            }
+        }
+
+        &:not(.ant-menu-horizontal) {
+            #{$root}-menu-item-selected {
+                background-color: $isabelline !important;
+                border-radius: 4px;
+            }
+        }
+
+        &-inline-collapsed {
+            padding: 0 !important;
+        }
+    }
+
+    &-layout {
+        &-sider,
+        &-header {
+            background: $white;
+        }
+
+        &-header {
+            border-bottom: 1px solid $anti-flash-white2;
+            @include adjust-flex(space-between, center);
+        }
+
+        &-sider {
+            background-color: $cool-black;
+            box-shadow: 0 rem(14) rem(28) $black025, 0 rem(10) rem(10) $black022;
+            height: 100vh;
+        }
+
+        &-content {
+            margin-top: rem(64);
+        }
+    }
+
+    &-tooltip {
+        &-inner {
+            span[role='img'] {
+                font-size: rem(14) !important;
+                margin-right: rem(8);
+            }
+        }
+    }
+
+    &-typography {
+        margin-bottom: 0 !important;
+        color: $smoky-black;
+    }
+
+    &-input {
+        &-status {
+            &-error {
+                background-color: $sea-shell !important;
+            }
+        }
+
+        &-affix-wrapper {
+            &-status-error {
+                background-color: $sea-shell !important;
+
+                .ant-input {
+                    background-color: $sea-shell !important;
+                }
+            }
+
+            &-lg {
+                font-size: rem(14) !important;
+                line-height: rem(20) !important;
+            }
+        }
+    }
+
+    &-select {
+        &-status {
+            &-error {
+                .ant-select-selector {
+                    background-color: $sea-shell !important;
+                }
+            }
+        }
+    }
+
+    &-dropdown {
+        &-menu {
+            filter: drop-shadow(0 1px 20px rgba(33, 33, 33, 0.2));
+            box-shadow: none;
+
+            &-item {
+                font-weight: 500 !important;
+                color: $gunmental;
+                background-color: $snow;
+                padding: rem(10) rem(12);
+
+                &:hover {
+                    background-color: $white;
+                }
+            }
+        }
+    }
+
+    &-select {
+        color: $smoky-black;
+
+        &-selection {
+            &-item {
+                font-weight: 500;
+            }
+        }
+    }
+
+    &-table {
+        color: $smoky-black;
+    }
+
+    &-card {
+        &-bordered {
+            border: 1px solid $gainsboro;
+        }
+
+        &-head {
+            padding: 0 rem(20);
+
+            &-title {
+                padding: rem(20) 0 rem(12);
+            }
+        }
+    }
+
+    &-descriptions {
+        &-item {
+            &-label {
+                flex: 0 0 50%;
+            }
+        }
+    }
+
+    &-btn {
+        &.flex {
+            @include adjust-flex(center, center);
+
+            .a-icon {
+                margin: 0 rem(8) 0 0;
+            }
+        }
+
+
+        &.mountainMeadow {
+            background-color: $mountain-meadow;
+            border-color: $mountain-meadow;
+            color: $white;
+        }
+
+        &.goldenPoppy {
+            background-color: $golden-poppy;
+            color: $eeric-black;
+        }
+
+        &.crayola {
+            background-color: $blue-crayola;
+            color: $white;
+        }
+
+        &.laSalleGreen {
+            background-color: $la-salle-green;
+            color: $white;
+        }
+
+        &.noBorder {
+            border: 0;
+        }
+
+        &.antiFlashWhite {
+            background-color: $anti-flash-white2;
+            color: $storm-clound;
+        }
+
+        &.gainsboro {
+            background-color: $gainsboro2;
+            color: $outer-space;
+        }
+    }
+
+    &-table {
+        color: $smoky-black;
+    }
+
+    &-pagination {
+        &-item,
+        &-prev {
+            margin-right: rem(16);
+        }
+    }
+
+    &-spin {
+        &-text {
+            color: $la-salle-green;
+        }
+    }
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-in-range::before {
+    background-color: $alice-blue;
+}
+
+.ant-picker-ranges .ant-picker-preset>.ant-tag-blue {
+    color: $true-blue;
+    background: $bubbles;
+    border-color: $pale-cyan;
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner,
+.ant-picker-cell-in-view.ant-picker-cell-range-start .ant-picker-cell-inner,
+.ant-picker-cell-in-view.ant-picker-cell-range-end .ant-picker-cell-inner {
+    background: $blue-crayola;
+}
+
+.ant-picker-cell:hover:not(.ant-picker-cell-in-view) .ant-picker-cell-inner,
+.ant-picker-cell:hover:not(.ant-picker-cell-selected):not(.ant-picker-cell-range-start):not(.ant-picker-cell-range-end):not(.ant-picker-cell-range-hover-start):not(.ant-picker-cell-range-hover-end) .ant-picker-cell-inner {
+    background: $bubbles;
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single)::before,
+.ant-picker-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-range-end-single)::before {
+    background: $blue-crayola;
+}
+
+h2.ant-typography {
+    @include font-base(32, 42);
+}
+
+.site-layout-background {
+    background-color: $white !important;
+    box-shadow: inset -1px 0 0 rgba(33, 33, 33, 0.1);
+}
+
+.sideBar_menus {
+    padding: 0 rem(16) !important;
+}
+
+.ant-layout.ant-layout-has-sider {
+    flex-direction: unset;
+}

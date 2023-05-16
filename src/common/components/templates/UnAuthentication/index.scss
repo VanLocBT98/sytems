@@ -1,0 +1,26 @@
+.t-unAuthentication {
+    position: relative;
+
+    &_row {
+        height: 100%;
+    }
+
+    &_background {
+        height: 30vh;
+        position: relative;
+        background: rgba(0, 113, 37, 0.05);
+        @include adjust-flex(center, center);
+
+        @include tablet-up {
+            height: 100vh;
+        }
+        
+        &_wrap {
+            width: rem(298);
+
+            @include mobile-down {
+                width: rem(210);
+            }
+        }
+    }
+}
